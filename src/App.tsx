@@ -21,6 +21,7 @@ function App() {
       ReadyPage={ReadyPage}
       catchAll={<ErrorComponent />}
       routerProvider={routerProvider}
+      resources={[{ name: "posts" }]}
     />
   );
 }
