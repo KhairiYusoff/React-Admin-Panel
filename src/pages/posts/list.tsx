@@ -1,4 +1,4 @@
-import { List, TextField, TagField, DateField, Table, useTable, FilterDropdown, Select, useSelect } from "@pankod/refine-antd";
+import { List, TextField, TagField, DateField, Table, useTable, FilterDropdown, Select, useSelect, ShowButton } from "@pankod/refine-antd";
 import { useMany } from "@pankod/refine-core";
 import { ICategory, IPost } from "interfaces"
 
@@ -59,6 +59,15 @@ export const PostList: React.FC = () => {
                                 {...categorySelectProps} />
                         </FilterDropdown>
                     )}
+                />
+                <Table.Column<IPost>
+                    title="Actions"
+                    dataIndex="actions"
+                    render={(_text, record): React.ReactNode => {
+                        return (
+                            <ShowButton size="small" recordItemId={record.id} hideText />
+                        )
+                    }}
                 />
             </Table>
         </List>
