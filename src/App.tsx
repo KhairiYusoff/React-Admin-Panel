@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Refine } from "@pankod/refine-core";
 import {
   notificationProvider,
