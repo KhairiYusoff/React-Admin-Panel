@@ -15,6 +15,10 @@ export const PostList: React.FC = () => {
         }
     });
 
+    const { selectProps: categorySelectProps } = useSelect<ICategory>({
+        resource: "categories"
+    })
+
     return (
         <List>
             <Table {...tableProps} rowKey="id">
@@ -46,6 +50,15 @@ export const PostList: React.FC = () => {
                             />
                         )
                     }}
+                    filterDropdown={(props) => (
+                        <FilterDropdown {...props}>
+                            <Select
+                                style={{ minWidth: 200 }}
+                                mode="multiple"
+                                placeholder="Select Category"
+                                {...categorySelectProps} />
+                        </FilterDropdown>
+                    )}
                 />
             </Table>
         </List>
