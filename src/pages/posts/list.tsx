@@ -1,4 +1,4 @@
-import { List, TextField, TagField, DateField, Table, useTable, FilterDropdown, Select, useSelect, ShowButton } from "@pankod/refine-antd";
+import { List, TextField, TagField, DateField, Table, useTable, FilterDropdown, Select, useSelect, ShowButton, EditButton, Space } from "@pankod/refine-antd";
 import { useMany } from "@pankod/refine-core";
 import { ICategory, IPost } from "interfaces"
 
@@ -65,7 +65,10 @@ export const PostList: React.FC = () => {
                     dataIndex="actions"
                     render={(_text, record): React.ReactNode => {
                         return (
-                            <ShowButton size="small" recordItemId={record.id} hideText />
+                            <Space>
+                                <ShowButton size="small" recordItemId={record.id} hideText />
+                                <EditButton size="small" recordItemId={record.id} hideText />
+                            </Space>
                         )
                     }}
                 />
