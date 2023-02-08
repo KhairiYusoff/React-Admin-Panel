@@ -20,7 +20,7 @@ function App() {
       ReadyPage={ReadyPage}
       catchAll={<ErrorComponent />}
       routerProvider={routerProvider}
-      resources={[{ name: "posts", list: PostList, show: PostShow, create: PostCreate, edit: PostEdit }]}
+      resources={[{ name: "posts", list: PostList, show: PostShow, create: PostCreate, edit: PostEdit, canDelete: true }]}
     />
   );
 }
